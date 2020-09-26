@@ -1,5 +1,9 @@
-# case_pld
-projeto referente ao case PLD
+# Case PLD
+Projeto referente ao case PLD
 
 # visão arquitetural
-![Alt text here](images/case_pld.svg)
+![Arquitetura utilizada](images/case_pld.svg)
+
+# Descrição do workflow
+- A ingestão de dado ocorre
+- 
