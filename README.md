@@ -7,3 +7,6 @@ Projeto referente ao case PLD
 # Descrição do workflow
 - A ingestão de dado ocorre
 - 
+
+# Build
+1 - Clonar o projeto
