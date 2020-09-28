@@ -1,0 +1,2 @@
+-- gerar evento para ingestão no BRIDGE
+~/kafka_2.13-2.6.0/bin$ ./kafka-console-producer.sh --bootstrap-server localhost:9092 --topic bridge < ~/workspace/case_pld/data/data.json 
