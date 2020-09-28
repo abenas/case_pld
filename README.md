@@ -40,32 +40,24 @@
     - Docker
     
 # Simulação do processo legado
-1 - Clonar o projeto do github:
-    - git clone https://github.com/abenas/case_pld.git
-2 - Subir a infraestrutura do FTP, disponível em infra/ftp:
-    - docker-compose up -d
-3 - Subir a infraestrutura do Kafka, disponível em infra/kafka:
-    - docker-compose up -d
-4 - Subir a infraestrutura ELK, disponível em infra/elk:
-    - docker-compose up -d
-3 - Subir as aplicações:
-    3.1 - Loader
-    3.2 - Legacy-producer
-4 - Submeter um arquivo de dados representativo do legado, disponível em data
-    4.0 - Entrar na pasta infra/data
-    4.1 - Executar o comando: ftp localhost
-    4.2 - Executar o comando: send data-small.csv d1.csv
+
+    1.  Clonar o projeto do github.
+    2.  Subir a infraestrutura do FTP.
+    3.  Subir a infraestrutura do KAFKA.
+    4.  Subir a infraestrutura ELK.
+    5.  Subir as aplicações, LOADER e LEGACY-PRODUCER.
+    6.  Submeter um arquivo de dados representativo do legado.
 
 ## Comportamento esperado
 
-    1 - O arquivo data-small.csv será enviado por ftp ao servidor local.
-    2 - A aplicação legacy-producer utiliza o framework Camel para integração e processamento orientado a rotas.
-    3 - Existe uma rota configurada para efetuar um pooling no servidor ftp local, de tempos em tempos em busca de arquivos a serem processados.
-    4 - Após o envio do arquivo data-small.csv, a rota FtpServer será iniciada e realizará o download do arquivo (d1.csv).
-    5 - O arquivo d1.csv será processado então pelo handler de processamento de arquivos.
-    6 - O handler responsável chama o serviço TransactionService, que por sua vez postará no tópico Transactions.
-    7 - Após o dado estar disponível no tópico Transactions, a aplicação LOADER irá realizar o tratemento dos eventos existentes.
-    8 - Por fim, o dado é disponibilizado no Elastic Search para ingestão no índice de análise.
+    -   O arquivo data-small.csv será enviado por ftp ao servidor local.
+    -   A aplicação legacy-producer utiliza o framework Camel para integração e processamento orientado a rotas.
+    -   Existe uma rota configurada para efetuar um pooling no servidor ftp local, de tempos em tempos em busca de arquivos a serem processados.
+    -   Após o envio do arquivo data-small.csv, a rota FtpServer será iniciada e realizará o download do arquivo (d1.csv).
+    -   O arquivo d1.csv será processado então pelo handler de processamento de arquivos.
+    -   O handler responsável chama o serviço TransactionService, que por sua vez postará no tópico Transactions.
+    -   Após o dado estar disponível no tópico Transactions, a aplicação LOADER irá realizar o tratemento dos eventos existentes.
+    -   Por fim, o dado é disponibilizado no Elastic Search para ingestão no índice de análise.
 
 # Simulação do processo atual
 1 - Clonar o projeto do github:
