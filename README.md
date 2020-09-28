@@ -2,7 +2,7 @@
 - Projeto referente ao case PLD fornecido como estudo de caso para o banco Itaú.
 
 # Visão arquitetural - Infraestrutura e componentes
-![Arquitetura utilizada](images/case_pld.svg)
+![Arquitetura utilizada](images/diagram.png)
 
 # Descrição da solução
 - Foi idealizado uma esteira de execução, onde o dado representativo de uma "Transação bancária" caminha entre componentes com responsabilidades distinas, desta forma, produzindo baixo acoplamento entre eles e passível de evolução por funcionalidade.
