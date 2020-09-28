@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "422e6162-01bc-49de-8e8d-b99bad8aa9ef",
+		"name": "TEMP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TESTE PLD",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Encoding",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fiscalYear\": 2020,\n    \"fiscalPeriod\": 2,\n    \"department\": \"DEPART_W\",\n    \"division\": \"DIVISION_Y\",\n    \"merchant\": \"EU\",\n    \"category\": \"PC\",\n    \"creationDate\": \"01/30/2020\",\n    \"amount\": 1000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/transactions",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"transactions"
+					]
+				},
+				"description": "TESTE"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
